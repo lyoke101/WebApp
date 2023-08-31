@@ -79,4 +79,4 @@ jobs:
       uses: github/codeql-action/analyze@v2
       with:
         category: "/language:${{matrix.language}}"
-        packs: codeql/csharp-all
+        queries: security-extended,security-and-quality
