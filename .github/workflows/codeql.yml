@@ -79,6 +79,12 @@ jobs:
       uses: github/codeql-action/analyze@v2
       with:
         category: "/language:${{matrix.language}}"
+        
+    - name: files
+      run: |
+        cd WebApp
+        pwd
+        ls
 
     - name: Upload results
       uses: github/codeql-action/upload-sarif@v2
