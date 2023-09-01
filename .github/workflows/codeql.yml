@@ -83,3 +83,5 @@ jobs:
         
     - name: Upload DevSkim scan results to GitHub Security tab
       uses: github/codeql-action/upload-sarif@v2
+      with:
+        category: CodeQL Analysis
