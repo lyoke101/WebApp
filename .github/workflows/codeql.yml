@@ -50,7 +50,6 @@ jobs:
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
       with:
-        debug: true
         languages: ${{ matrix.language }}
         queries: security-extended,security-and-quality
         # If you wish to specify custom queries, you can do so here or in a config file.
@@ -80,8 +79,9 @@ jobs:
       uses: github/codeql-action/analyze@v2
       with:
         category: "/language:${{matrix.language}}"
+        output: sarif-results
         
-    - name: Upload DevSkim scan results to GitHub Security tab
+    - name: Upload 
       uses: github/codeql-action/upload-sarif@v2
       with:
-        category: CodeQL Analysis
+        sarif_file: sarif-results
