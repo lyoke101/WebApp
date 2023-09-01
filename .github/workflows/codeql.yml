@@ -82,7 +82,7 @@ jobs:
         
     - name: files
       run: |
-        cd WebApp
+        cd ..
         pwd
         ls
 
